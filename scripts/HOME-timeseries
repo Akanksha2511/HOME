@@ -456,7 +456,7 @@ if __name__ == "__main__":
     merge = functools.partial(pd.merge, how='inner', on=['chr','pos',"strand","type"])
     dictionary = OrderedDict(zip(list(samplenames),list(input_files)))
     comb_samples=itertools.combinations(list(samplenames), 2)
-       
+
     if status==0:        
         print"Preparing the DMRs from HOME....." 
         print "GOOD LUCK !" 
@@ -483,7 +483,4 @@ if __name__ == "__main__":
                 pool1.join()
                 shutil.rmtree(o.outputpath+'/temp_HOME', ignore_errors=True)
                 remEmptyDir(o.outputpath+'/HOME_DMRs/')
-
-          )
-
-          
+                
